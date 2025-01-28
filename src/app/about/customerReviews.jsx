@@ -20,7 +20,7 @@ const CustomerReviews = () => {
         </div>
     
         {/* Text */}
-        <div className="flex flex-col sm:gap-y-4 lg:ml-5 my-[2rem] sm:my-[3rem] ">
+        <div className="flex flex-col sm:gap-y-4 lg:ml-5 my-[2rem]">
   {/* Heading */}
   <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold leading-relaxed">
     Customer <span className="text-hoverUnderlineColor">Reviews</span>

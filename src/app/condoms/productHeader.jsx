@@ -69,7 +69,7 @@ const ProductHeader = () => {
 
                   {/* Custom Button */}
                   <CustomeBtn
-                    buttonText="Go to Consulting"
+                    buttonText="Get to Consulting"
                     buttonLink="/consultation"
                     imageSrc="/icons/arrowIcon.png"
                     altText="Consulting Arrow"

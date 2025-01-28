@@ -3,12 +3,9 @@ import React from "react";
 import "./page.css";
 import Image from "next/image"; 
 import HowDoesItWorks from "@/component/content/HowDoesItWorks";
-import QualifiedTeamAboutPage from "@/component/qualifiedTeamAboutPage";
-import PharmacyRegulationsMobile from "@/component/PharmacyRegulationsMobile";
-import HowDoesItWorksMobile from "@/component/HowDoesItWorksMobile";
-import CompanyInformation from "./companyInformation";
-import CustomerReviews from "./customerReviews";
-import PharmaRegulation from "./PharmaRegulation";
+import QualifiedTeamAboutPage from "@/component/qualifiedTeamAboutPage"; 
+import HowDoesItWorksMobile from "@/component/HowDoesItWorksMobile"; 
+import CustomerReviews from "./customerReviews"; 
 const Page = () => {
   return (
     <div>

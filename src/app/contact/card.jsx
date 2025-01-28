@@ -43,7 +43,7 @@ const Card = () => {
                 >
                   <Link href={card.link}>
                     <div className="text-left group">
-                      <h1 className="text-2xl md:text-3xl font-normal text-hoverUnderlineColor mb-4 relative group-hover:text-red-600">
+                      <h1 className="text-2xl md:text-3xl font-normal text-gray-800 mb-4 relative group-hover:text-red-600">
                         {card.title}
                         <span className="absolute left-0 mt-[1px] block w-0 h-[2px] bg-red-600 transition-all duration-300 group-hover:w-full"></span>
                       </h1>
@@ -77,7 +77,7 @@ const Card = () => {
           >
             <Link href={card.link}>
               <div className="text-left group">
-                <h1 className="text-2xl md:text-3xl font-normal text-hoverUnderlineColor mb-4 relative group-hover:text-red-600">
+                <h1 className="text-2xl md:text-3xl font-normal text-gray-800 mb-4 relative group-hover:text-gray-900">
                   {card.title}
                   <span className="absolute left-0 mt-[1px] block w-0 h-[2px] bg-red-600 transition-all duration-300 group-hover:w-full"></span>
                 </h1>

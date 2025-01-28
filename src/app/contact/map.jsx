@@ -11,7 +11,7 @@ const Map = () => {
           <div className="w-full my-8">
           <h1 className="block ml-2 xl:ml-0 justify-start text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-center sm:text-start xl:text-left">
               Contact&nbsp;
-              <span className="relative text-hoverUnderlineColor tracking-widest">
+              <span className="relative text-gray-800 tracking-widest">
                 Information
               </span>
             </h1>
@@ -19,15 +19,15 @@ const Map = () => {
             
             <div className='w-full'>
               {/* Grid Layout for Text and Map */}
-              <div className="grid grid-rows-2 sm:grid-cols-1 xl:grid-cols-[30%_70%] lg:grid-cols-[40%_60%] lg:grid-rows-1 gap-y-6 sm:gap-y-4 h-auto lg:h-auto">
+              <div className="grid grid-rows-2 sm:grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 lg:grid-rows-1 gap-y-6 sm:gap-y-4 h-auto lg:h-auto">
                 
                 {/* Text Section */}
-                <div className="xl:mt-7 pr-0 sm:pr-4 lg:pr-10 xl:pr-20 order-2 lg:order-1 flex sm:justify-start sm:items-start">
-  <p className="w-full lg:w-72 max-w-full sm:text-left text-center leading-8 sm:leading-10 bg-gray-100 sm:bg-transparent text-base sm:text-base lg:text-lg xl:text-xl font-light sm:mb-4 mb-0 ">
+                <div className="xl:mt-7 pr-0   order-2 lg:order-1 sm:pr-10 md:pr-32 flex sm:justify-start sm:items-start">
+  <p className="w-full   max-w-full sm:text-left text-center leading-8 sm:leading-10 bg-gray-100 sm:bg-transparent text-base sm:text-base lg:text-lg xl:text-xl font-light sm:mb-4 mb-0 ">
     We aim to provide a seamless and reliable healthcare service
     that ensures customer satisfaction and promotes better health
     outcomes. With years of expertise in pharmaceutical services,
-    we have built a reputation for being a trusted name in the UK.
+    we have built a reputation for being a trusted name in the UK. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa obcaecati alias numquam! Provident enim adipisci error voluptas iure. Possimus aliquam necessitatibus, blanditiis rem vero unde quos earum labore omnis voluptatibus?
   </p>
 </div>
 

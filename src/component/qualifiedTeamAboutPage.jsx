@@ -1,6 +1,5 @@
 import React from "react";
-import "../app/about/page.css";
-import Link from "next/link";
+import "../app/about/page.css"; 
 import Image from "next/image";
 
 const QualifiedTeamAboutPage = () => {

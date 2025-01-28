@@ -25,7 +25,7 @@ const ReviewsByPlatforms = () => {
   }, []);
   return (
     <>
-      <div className="container mx-auto p-4 mt-20 bg-white rounded-2xl ">
+      <div className="container mx-auto p-4 mt-20 bg-white rounded-2xl">
         {/* Title */}
         <div className="block mx-auto text-center text-xl lg:text-4xl xl:text-5xl md:text-3xl sm:text-2xl font-semibold   mb-10 sm:mb-0 text-hoverUnderlineColor">
           More Than{" "}
