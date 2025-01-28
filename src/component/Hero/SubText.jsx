@@ -7,7 +7,7 @@ const SubText = () => {
   return (
     <>
       {/* Sub Text */}
-      <div className="heroSubText grid container grid-cols-2 xl:text-base md:text-sm text-xs w-[100%] sm:w-[55%] md:w-[50%] lg:w-[45%] lg:grid-cols-2 gap-0 sm:gap-2 ml-0 sm:justify-center lg:ml-0  md:items-start sm:items-start  xl:w-[calc(100%-65%)] ">
+      <div className="heroSubText grid container grid-cols-2 xl:text-sm md:text-sm text-xs w-[100%] sm:w-[55%] md:w-[50%] lg:w-[45%] lg:grid-cols-2 gap-0 sm:gap-2 ml-0 sm:justify-center lg:ml-0  md:items-start sm:items-start  xl:w-[calc(100%-65%)] ">
           <div className="heroSubText pt-2 flex mb-2 sm:mb-0">
             <Image
               src="/tick.png"
@@ -16,7 +16,7 @@ const SubText = () => {
               alt=""
               className="hidden sm:block w-3 h-4 size-3 md:pr-1 md:mt-1"
             />
-            <span className="text-white"> UK registered pharmacy </span>
+            <span className="text-white">Fully licensed UK Online Pharmacy</span>
           </div>
           <div className="pt-2 flex mb-2 sm:mb-0">
             <Image
@@ -26,8 +26,8 @@ const SubText = () => {
               alt=""
               className="hidden sm:block w-3 h-4 size-3 md:pr-1 md:mt-1"
             />
-            <span className="text-white xl:text-base md:text-sm">
-              Express next day delivery
+            <span className="text-white xl:text-sm md:text-sm">
+            	Secure and discreet packaging for privacy
             </span>
           </div>
           <div className="flex mb-2 sm:mb-0">
@@ -38,10 +38,10 @@ const SubText = () => {
               alt=""
               className="hidden sm:block w-3 h-4 size-3 md:pr-1 md:mt-1"
             />
-            <span className="text-white xl:text-base md:text-sm">
-              Discreet packaging
+            <span className="text-white xl:text-sm md:text-sm">
+            Fast, reliable next-day delivery
             </span>
-          </div>
+          </div> 
           <div className="flex mb-2 sm:mb-0">
             <Image
               src="/tick.png"
@@ -50,10 +50,10 @@ const SubText = () => {
               alt=""
               className="hidden sm:block w-3 h-4 size-3 md:pr-1 md:mt-1"
             />
-            <span className="text-white xl:text-base md:text-sm">
-              207,731 customer reviews
+            <span className="text-white xl:text-sm md:text-sm">
+            Fast & Secure Shipping
             </span>
-          </div>
+          </div> 
         </div>
 
         {/* Main Content Grid */}
@@ -86,6 +86,7 @@ const SubText = () => {
                 />
               ))}
             </div>
+            
           </div>
 
           {/* Right Column */}
@@ -93,7 +94,10 @@ const SubText = () => {
             <div className="xl:h-[7vh] sm:h-[10vh] md:h-[7vh] w-[1px] bg-white md:mx-auto"></div>
             <span className="flex  sm:justify-start sm:items-start flex-wrap text-white font-normal text-base sm:ml-2 md:ml-4  ">
               <span className="my-5 sm:my-0 font-normal text-center sm:text-left text-xs sm:text-xs leading-tight sm:ml-0 md:text-sm md:w-[100%] md:text-left">
-                The Winner of the Feefo Platinum Trusted Service Award in 2025
+              Discover why <span className='text-hoverUnderlineColor'>iFeelShy</span> is the go-to choice for seamless and convenient online pharmacy services. 
+Shop with confidence today!
+
+
               </span>
             </span>
           </div>

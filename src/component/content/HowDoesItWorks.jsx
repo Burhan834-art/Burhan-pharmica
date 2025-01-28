@@ -62,7 +62,7 @@ const HowDoesItWorks = () => {
       <div className="relative z-10">
         <h2 className="text-xl lg:text-4xl xl:text-5xl md:text-3xl sm:text-2xl font-semibold text-center sm:mb-12 text-gray-800">
           How Does It&nbsp;
-          <span className="relative text-gray-800 tracking-widest">Work</span>
+          <span className="relative text-gray-800 tracking-widest">Work?</span>
         </h2>
 
         {/* Product Visual Section */}
