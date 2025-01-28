@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import CompleteBtn from "./completeBtn";
 import { motion } from "framer-motion";
 
-const Page = () => {
+const Consult = () => {
   const [faqData, setFaqData] = useState([]);
   const [error, setError] = useState(null);
   const [answers, setAnswers] = useState({});
@@ -123,4 +123,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default Consult;

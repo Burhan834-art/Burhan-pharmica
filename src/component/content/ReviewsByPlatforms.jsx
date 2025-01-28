@@ -246,12 +246,9 @@ const ReviewsByPlatforms = () => {
         )}
       </div>
       {/* Content Section 4 */}
-      <div className="hidden sm:block">
+      <div className="">
         <Reviews />
-      </div>
-      <div className="block sm:hidden">
-        <ReviewsMobileScreen/>
-      </div>
+      </div> 
     </>
   );
 };

@@ -6,7 +6,7 @@ import HowDoesItWorks from "@/component/content/HowDoesItWorks";
 import QualifiedTeamAboutPage from "@/component/qualifiedTeamAboutPage"; 
 import HowDoesItWorksMobile from "@/component/HowDoesItWorksMobile"; 
 import CustomerReviews from "./customerReviews"; 
-const Page = () => {
+const AboutPage = () => {
   return (
     <div>
     {/* Image Section */}
@@ -135,4 +135,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default AboutPage;

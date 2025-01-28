@@ -8,7 +8,7 @@ import Card from "./card";
 import Policy from "./policy";
 import HowDoesItWorksMobile from "@/component/HowDoesItWorksMobile";
 
-const Page = () => {
+const ContactPage = () => {
   const [information, setInformation] = useState(null);
   const [informationText, setInformationText] = useState(null);
   const [informationTiming, setinformationTiming] = useState(null);
@@ -33,6 +33,8 @@ const Page = () => {
       {/* Customer Service Opening Hours
        */}
       <div className="bg-gray-50 px-4 sm:px-6 lg:px-8 sm:mt-[-30px]">
+        <div> 
+        </div>
         <div className="flex justify-center items-center sm:my-6 ">
           <SimpleMap />
         </div>
@@ -159,4 +161,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default ContactPage;

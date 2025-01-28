@@ -2,7 +2,7 @@ import React from "react";
 import Hero from "@/component/Hero/Hero";
 import Content from "@/component/content/product/ProductList";    
 
-const App = () => {
+const Home = () => {
   
   return (
     <>
@@ -13,4 +13,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Home;
