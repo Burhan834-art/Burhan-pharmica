@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react"; 
 import "swiper/css";
 import "swiper/css/pagination";
 import Image from "next/image";
-import Reviews from "./reviews";
-import ReviewsMobileScreen from "./reviewsMobileScreen";
+import Reviews from "./reviews"; 
 
 const ReviewsByPlatforms = () => {
   const [isMobile, setIsMobile] = useState(false);

@@ -1,57 +1,155 @@
-import React from 'react';
-import "../about/page.css";
+"use client";
+import React, { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import "./page.css";
 
 const Map = () => {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = [];
+    const colors = ["#0f9d58", "#34a853", "#7bc96f", "#b3e0a6"]; // Green shades for pharmacy vibes
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 4 + 1;
+        this.speedX = Math.random() * 1.2 - 0.6;
+        this.speedY = Math.random() * 1.2 - 0.6;
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+      }
+      draw() {
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function init() {
+      for (let i = 0; i < 50; i++) {
+        particles.push(new Particle());
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach((particle) => {
+        particle.update();
+        particle.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+
+    init();
+    animate();
+  }, []);
+
   return (
-    <> 
-      {/* Main Content Section */}
-      <div className="container mx-auto md:mb-[70px] lg:px-8">
-        <div className="grid w-full h-auto gap-4 p-0 relative">
-          {/* Company Information Section */}
-          <div className="w-full my-8">
-          <h1 className="block ml-2 xl:ml-0 justify-start text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-center sm:text-start xl:text-left">
+    <div className="relative w-full min-h-screen bg-gray-900 overflow-hidden">
+      {/* Animated Particle Background */}
+      <canvas ref={canvasRef} className="absolute inset-0 z-0"></canvas>
+
+      {/* Main Content */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="relative container mx-auto px-6 md:mb-[70px] lg:px-10 z-10"
+      >
+        <div className="grid w-full h-auto gap-6 p-0 relative">
+          {/* Title Section */}
+          <div className="w-full my-12 text-center sm:text-left">
+            <motion.h1
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.3 }}
+              className="text-4xl md:text-5xl font-extrabold text-white"
+            >
               Contact&nbsp;
-              <span className="relative text-gray-800 tracking-widest">
-                Information
+              <span className="bg-gradient-to-r from-green-400 to-blue-400 text-transparent bg-clip-text">
+                Our Pharmacy
               </span>
-            </h1>
+            </motion.h1>
+          </div>
 
-            
-            <div className='w-full'>
-              {/* Grid Layout for Text and Map */}
-              <div className="grid grid-rows-2 sm:grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 lg:grid-rows-1 gap-y-6 sm:gap-y-4 h-auto lg:h-auto">
-                
-                {/* Text Section */}
-                <div className="xl:mt-7 pr-0   order-2 lg:order-1 sm:pr-10 md:pr-32 flex sm:justify-start sm:items-start">
-  <p className="w-full   max-w-full sm:text-left text-center leading-8 sm:leading-10 bg-gray-100 sm:bg-transparent text-base sm:text-base lg:text-lg xl:text-xl font-light sm:mb-4 mb-0 ">
-    We aim to provide a seamless and reliable healthcare service
-    that ensures customer satisfaction and promotes better health
-    outcomes. With years of expertise in pharmaceutical services,
-    we have built a reputation for being a trusted name in the UK. Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa obcaecati alias numquam! Provident enim adipisci error voluptas iure. Possimus aliquam necessitatibus, blanditiis rem vero unde quos earum labore omnis voluptatibus?
-  </p>
-</div>
+          {/* Content Grid */}
+          <div className="grid sm:grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 gap-10">
+            {/* Info Section */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.5 }}
+              className="order-2 lg:order-1 space-y-6"
+            >
+              <p className="bg-white/10 text-white text-lg leading-8 p-6 rounded-lg shadow-lg">
+                Our pharmacy is dedicated to providing high-quality medical
+                supplies and excellent customer service. Whether you need
+                prescription assistance or general healthcare products, we are
+                here to help.
+              </p>
 
+              {/* Contact Cards */}
+              <div className="space-y-4">
+                <div className="flex items-center gap-4 bg-white/10 p-4 rounded-lg shadow-md">
+                  <FaPhoneAlt className="text-green-400 text-xl" />
+                  <p className="text-white text-lg">+44 1234 567 890</p>
+                </div>
 
+                <div className="flex items-center gap-4 bg-white/10 p-4 rounded-lg shadow-md">
+                  <FaEnvelope className="text-green-400 text-xl" />
+                  <p className="text-white text-lg">contact@pharmacy.com</p>
+                </div>
 
-                {/* Map Section */}
-                <div className="md:mt-7 relative order-1 rounded-xl">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1241.0702170893087!2d-0.26628656032713144!3d51.52898401390689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487611edc75bb9af%3A0x14b81cfca4797c20!2sPark%20Royal%2C%20London%2C%20UK!5e0!3m2!1sen!2s!4v1735554020582!5m2!1sen!2s"
-                    className="w-full rounded-xl"
-                    height="350"
-                    style={{ border: '2px solid #ccc' }}
-                    allowFullScreen=""
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  ></iframe>
+                <div className="flex items-center gap-4 bg-white/10 p-4 rounded-lg shadow-md">
+                  <FaMapMarkerAlt className="text-green-400 text-xl" />
+                  <p className="text-white text-lg">Park Royal, London, UK</p>
                 </div>
               </div>
-            </div>
 
+              {/* Contact Button */}
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-hoverUnderlineColor hover:bg-hoverUnderlineColor text-white font-bold py-3 px-6 rounded-lg shadow-md transition-all"
+              >
+                Get in Touch
+              </motion.button>
+            </motion.div>
+
+            {/* Map Section */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.7 }}
+              className="relative order-1 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-500"
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1241.0702170893087!2d-0.26628656032713144!3d51.52898401390689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487611edc75bb9af%3A0x14b81cfca4797c20!2sPark%20Royal%2C%20London%2C%20UK!5e0!3m2!1sen!2s!4v1735554020582!5m2!1sen!2s"
+                className="w-full h-80 rounded-xl border-4 border-green-500 shadow-lg"
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </motion.div>
           </div>
         </div>
-      </div>
-    </>
+      </motion.div>
+    </div>
   );
 };
 

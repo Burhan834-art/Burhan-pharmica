@@ -6,7 +6,7 @@ import Image from "next/image";
 import HowDoesItWorks from "@/component/content/HowDoesItWorks";
 import Card from "./card";
 import Policy from "./policy";
-import HowDoesItWorksMobile from "@/component/HowDoesItWorksMobile";
+import HowDoesItWorksMobile from "@/component/HowDoesItWorksMobile"; 
 
 const ContactPage = () => {
   const [information, setInformation] = useState(null);
@@ -33,7 +33,8 @@ const ContactPage = () => {
       {/* Customer Service Opening Hours
        */}
       <div className="bg-gray-50 px-4 sm:px-6 lg:px-8 sm:mt-[-30px]">
-        <div> 
+        <div className="">
+
         </div>
         <div className="flex justify-center items-center sm:my-6 ">
           <SimpleMap />
