@@ -8,7 +8,7 @@ const CondomsPage = () => {
   return (
     <div className='container mx-auto mt-20'>
       <ProductHeader/>
-      <div className='mt-20'>
+      <div className='mt-10 sm:mt-20'>
       <ProductsCard/>
       </div>
       <div className='mt-20'>

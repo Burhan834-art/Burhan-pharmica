@@ -60,7 +60,7 @@ const HowDoesItWorks = () => {
   return (
     <div className="container mx-auto h-auto my-24 lg:px-12 relative">
       <div className="relative z-10">
-        <h2 className="text-xl lg:text-4xl xl:text-5xl md:text-3xl sm:text-2xl font-semibold text-center sm:mb-12 text-gray-800">
+        <h2 className="text-xl lg:text-4xl xl:text-5xl md:text-3xl sm:text-2xl font-semibold text-center sm:mb-2 text-gray-800">
           How Does It&nbsp;
           <span className="relative text-gray-800 tracking-widest">Work?</span>
         </h2>
@@ -70,28 +70,32 @@ const HowDoesItWorks = () => {
 
         {/* Display loading skeleton or content */}
         {isLoading ? renderSkeleton() : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            {sections.map((section, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center bg-gray-800 p-6 rounded-lg transition-all shadow-lg hover:scale-105 hover:bg-gray-900"
-              >
-                <Image
-                  src={section.image}
-                  alt={section.name || "Section image"}
-                  width={400}
-                  height={160}
-                  className="w-full h-40 object-cover rounded-md mb-4"
-                />
-                <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-white mb-2 text-center">
-                  {section.name}
-                </h3>
-                <p className="text-sm font-light sm:text-base lg:text-base text-gray-300 text-center">
-                  {section.description}
-                </p>
-              </div>
-            ))}
-          </div>
+         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-5">
+         {sections.map((section, index) => (
+           <div
+             key={index}
+             className="flex group flex-col items-center justify-center p-6 h-[30rem] rounded-lg transition-all hover:shadow-lg hover:scale-105 hover:shadow-4xl relative"
+           >
+             {/* Red line on hover */}
+             <div className="absolute top-0 left-0 w-full h-[4px] bg-hoverUnderlineColor scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-in-out"></div>
+             
+             <Image
+               src={section.image}
+               alt={section.name || "Section image"}
+               width={400}
+               height={160}
+               className="w-full h-40 object-cover rounded-md mb-4"
+             />
+             <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-800 mb-2 text-center">
+               {section.name}
+             </h3>
+             <p className="text-sm font-light sm:text-base lg:text-base text-gray-800 text-center">
+               {section.description}
+             </p>
+           </div>
+         ))}
+       </div>
+       
         )}
       </div>
     </div>

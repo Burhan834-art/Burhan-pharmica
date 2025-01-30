@@ -32,10 +32,7 @@ const ContactPage = () => {
 
       {/* Customer Service Opening Hours
        */}
-      <div className="bg-gray-50 px-4 sm:px-6 lg:px-8 sm:mt-[-30px]">
-        <div className="">
-
-        </div>
+      <div className="bg-gray-50 px-4 sm:px-6 lg:px-8 sm:mt-[-30px]"> 
         <div className="flex justify-center items-center sm:my-6 ">
           <SimpleMap />
         </div>

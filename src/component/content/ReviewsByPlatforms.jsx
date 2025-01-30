@@ -9,6 +9,7 @@ const ReviewsByPlatforms = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   // Detect screen size
+  
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768); // You can adjust this breakpoint as needed

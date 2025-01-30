@@ -76,7 +76,7 @@ const ProductHeader = () => {
                     className=""
                   />
 
-                  <p className="xl:text-base md:text-base text-sm font-normal max-w-full text-gray-600 mt-4 leading-8">
+                  <p className="xl:text-base md:text-base text-sm font-normal max-w-full text-gray-600 mt-4 leading-8 px-5 ">
                     {item.content}
                   </p>
                 </div>

@@ -2,24 +2,32 @@ import React from "react";
 
 const ProductVisual = () => {
   return (
-    <div
-      className="my-20 px-4 py-10 rounded-lg bg-gradient-to-br from-gray-800 via-black to-red-700 transition-all duration-500 ease-in-out shadow-xl"
-    > 
-
+    <div className="  px-6 py-2 ">
       {/* Content Section */}
-      <div className="flex justify-center items-center">
+      <div className="flex flex-col justify-center items-center  p-8 space-y-6">
+         
+ {/* Dummy Text Section */}
+ <div className="text-center max-w-4xl">
+        
+ <p className="text-gray-700  leading-10 " style={{ letterSpacing: "0.5px" }}>
+  Discover the latest in cutting-edge technology with our new product. Designed to enhance your experience, it delivers performance, style, and reliability in one seamless package.
+</p>
+
+      </div>
         {/* Video Container */}
-        <div className="w-full max-w-full sm:max-w-2xl md:max-w-4xl mx-auto">
+        <div className="w-auto py-5 xl:max-w-[50rem] mx-auto">
           <video
             src="/2340-157269921_tiny.mp4"
             muted
             controls
-            className="w-full rounded-lg shadow-lg border-4 border-red-600 hover:scale-105 transform transition-transform duration-300"
+            className="w-full rounded-lg "
             preload="auto"
           >
             Your browser does not support the video tag.
           </video>
         </div>
+
+       
       </div>
     </div>
   );

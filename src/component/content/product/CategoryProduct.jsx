@@ -58,6 +58,22 @@ const CategoryProduct = () => {
     ))
   );
 
+  // Skeleton for the Subcategory Grid items
+  const renderSubcategorySkeleton = (count) => (
+    Array(count).fill().map((_, index) => (
+      <div key={index} className="bg-black rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-95">
+        <div className="w-full">
+          <Skeleton height={200} />
+        </div>
+        <div className="p-4">
+          <Skeleton width="60%" height={20} />
+          <Skeleton width="80%" height={15} className="mt-2" />
+          <Skeleton width="100%" height={30} className="mt-4" />
+        </div>
+      </div>
+    ))
+  );
+
   const renderCategories = () =>
     categories.map((category, index) => (
       <button
@@ -112,7 +128,7 @@ const CategoryProduct = () => {
   return (
     <div className="container mx-auto my-8 px-4">
       {/* Categories Button Section */}
-      <div className="flex overflow-x-auto space-x-2 py-4 mt-8 justify-between w-full scrollbar-thin scrollbar-thumb-hoverUnderlineColor scrollbar-track-gray-200">
+      <div className="flex overflow-x-auto space-x-2 mt-8 justify-between w-full scrollbar-thin scrollbar-thumb-hoverUnderlineColor scrollbar-track-gray-200">
         {isLoading ? renderSkeleton(5) : renderCategories()}
       </div>
 
@@ -123,9 +139,12 @@ const CategoryProduct = () => {
             Subcategories Under{" "}
             <span className="text-hoverUnderlineColor">{selectedCategory.name}</span>
           </h3>
-          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {isLoading ? renderSkeleton(5) : renderSubcategories()}
+          
+          {/* Responsive Grid Layout */}
+          <div className="grid gap-6 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {isLoading ? renderSubcategorySkeleton(5) : renderSubcategories()}
           </div>
+          {/* End of Grid */}
         </div>
       )}
     </div>

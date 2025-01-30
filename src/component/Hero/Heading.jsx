@@ -27,7 +27,7 @@ const Heading = () => {
   ].map((line, index) => (
     <motion.span
       key={index}
-      className="block text-2xl sm:text-3xl md:text-5xl xl:text-6xl leading-[1.3] sm:leading-[1.4] md:leading-[1.5] xl:leading-[1.6]"
+      className="block text-2xl sm:text-3xl md:text-5xl xl:text-6xl leading-[1.3] sm:leading-[1.4] md:leading-[1.5] "
       custom={index} // Pass index for staggered animation
       variants={textAnimation}
     >
