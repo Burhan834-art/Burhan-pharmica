@@ -246,7 +246,7 @@ const ReviewsByPlatforms = () => {
       </div>
       {/* Content Section 4 */}
       <div className="">
-        <Reviews />
+        {/* <Reviews /> */}
       </div> 
     </>
   );
