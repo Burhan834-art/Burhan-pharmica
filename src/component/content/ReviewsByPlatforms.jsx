@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import Image from "next/image";
-// import Reviews from "./reviews"; 
+import Reviews from "@/component/content/reviews"; 
 
 const ReviewsByPlatforms = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -246,7 +246,7 @@ const ReviewsByPlatforms = () => {
       </div>
       {/* Content Section 4 */}
       <div className="">
-        {/* <Reviews /> */}
+        <Reviews />
       </div> 
     </>
   );
