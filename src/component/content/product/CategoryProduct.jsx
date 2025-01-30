@@ -61,7 +61,7 @@ const CategoryProduct = () => {
   // Skeleton for the Subcategory Grid items
   const renderSubcategorySkeleton = (count) => (
     Array(count).fill().map((_, index) => (
-      <div key={index} className="bg-black rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-95">
+      <div key={index} className="bg-transparent rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-95">
         <div className="w-full">
           <Skeleton height={200} />
         </div>
@@ -79,8 +79,8 @@ const CategoryProduct = () => {
       <button
         key={index}
         onClick={() => handleCategoryClick(category)}
-        className={`flex justify-start items-center text-sm w-full sm:w-28 md:w-32 lg:w-44 h-8 sm:h-8 md:h-10 lg:h-12 border-2 rounded-full transition-all duration-300 ${
-          selectedCategory === category ? "bg-hoverUnderlineColor text-white" : "bg-black text-white"
+        className={`flex justify-start items-center text-sm w-full sm:w-28 md:w-32 lg:w-44 h-8 sm:h-8 md:h-10 lg:h-12 border-2 rounded-full border-hoverUnderlineColor transition-all duration-300 ${
+          selectedCategory === category ? "bg-hoverUnderlineColor text-white" : "bg-transparent text-gray-800"
         }`}
       >
         <Image
@@ -97,7 +97,7 @@ const CategoryProduct = () => {
 
   const renderSubcategories = () =>
     selectedCategory?.subcategories.map((subcategory, index) => (
-      <div key={index} className="bg-black rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-95">
+      <div key={index} className="bg-transparent rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-95">
         <div
           style={{
             backgroundImage: `url(${subcategory.image})`,
@@ -108,8 +108,8 @@ const CategoryProduct = () => {
           className="w-full"
         />
         <div className="p-4">
-          <h5 className="text-lg md:text-xl font-semibold text-white">{subcategory.name}</h5>
-          <p className="text-xs md:text-base text-gray-300 mt-2">
+          <h5 className="text-lg md:text-xl font-semibold text-gray-800">{subcategory.name}</h5>
+          <p className="text-xs md:text-base text-gray-800 mt-2">
             {subcategory.description ? (
               subcategory.description.length > 60
                 ? `${subcategory.description.substring(0, 70)}...`
@@ -117,7 +117,7 @@ const CategoryProduct = () => {
             ) : "No description available."}
           </p>
           <Link href={subcategory.link}>
-            <button className="w-full py-2 mt-4 bg-hoverUnderlineColor text-white rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+            <button className="w-[10rem] py-2 mt-4 bg-hoverUnderlineColor text-white rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
               Get to Consulting
             </button>
           </Link>
