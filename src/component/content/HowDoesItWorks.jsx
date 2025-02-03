@@ -60,9 +60,8 @@ const HowDoesItWorks = () => {
   return (
     <div className="container mx-auto h-auto my-24 lg:px-12 relative">
       <div className="relative z-10">
-        <h2 className="text-xl lg:text-4xl xl:text-5xl md:text-3xl sm:text-2xl font-semibold text-center sm:mb-2 text-gray-800">
-          How Does It&nbsp;
-          <span className="relative text-gray-800 tracking-widest">Work?</span>
+        <h2 className="text-4xl sm:text-5xl lg:text-[68px] font-semibold leading-tight lg:leading-[91px] text-center sm:mb-2 ">
+          How Does It&nbsp; Work?
         </h2>
 
         {/* Product Visual Section */}
@@ -89,7 +88,7 @@ const HowDoesItWorks = () => {
              <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-800 mb-2 text-center">
                {section.name}
              </h3>
-             <p className="text-sm font-light sm:text-base lg:text-base text-gray-800 text-center">
+             <p className="  font-light sm:text-base lg:text-base text-center [word-spacing:0.1em] text-lg">
                {section.description}
              </p>
            </div>

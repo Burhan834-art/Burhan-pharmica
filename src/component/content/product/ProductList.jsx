@@ -4,7 +4,7 @@ import "./ProductList.css";
 import HowDoesItWorksMobile from "../../HowDoesItWorksMobile";
 import QualifiedTeams from "../QualifiedTeams";
 import ProductHeading from "./productHeading";
-import CategoryProduct from "./CategoryProduct";
+import CategoryProduct from "@/component/content/product/CategoryProduct";
 
 const Content = () => {
   return (

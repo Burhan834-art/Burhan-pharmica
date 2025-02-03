@@ -79,7 +79,7 @@ const CategoryProduct = () => {
       <button
         key={index}
         onClick={() => handleCategoryClick(category)}
-        className={`flex justify-start items-center text-sm w-full sm:w-28 md:w-32 lg:w-44 h-8 sm:h-8 md:h-10 lg:h-12 border-2 rounded-full border-hoverUnderlineColor transition-all duration-300 ${
+        className={`flex justify-start items-center m-1 text-sm w-full sm:w-28 md:w-32 lg:w-44 h-8 sm:h-8 md:h-10 lg:h-12 rounded-full transition-all duration-300 ${
           selectedCategory === category ? "bg-hoverUnderlineColor text-white" : "bg-transparent text-gray-800"
         }`}
       >
@@ -97,7 +97,7 @@ const CategoryProduct = () => {
 
   const renderSubcategories = () =>
     selectedCategory?.subcategories.map((subcategory, index) => (
-      <div key={index} className="bg-transparent rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-95">
+      <div key={index} className="bg-transparent rounded-xl shadow-gray-300 p-2  shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-95">
         <div
           style={{
             backgroundImage: `url(${subcategory.image})`,
@@ -105,7 +105,7 @@ const CategoryProduct = () => {
             backgroundPosition: "center",
             height: "200px",
           }}
-          className="w-full"
+          className="w-full rounded-xl"
         />
         <div className="p-4">
           <h5 className="text-lg md:text-xl font-semibold text-gray-800">{subcategory.name}</h5>
@@ -117,8 +117,8 @@ const CategoryProduct = () => {
             ) : "No description available."}
           </p>
           <Link href={subcategory.link}>
-            <button className="w-[10rem] py-2 mt-4 bg-hoverUnderlineColor text-white rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
-              Get to Consulting
+            <button className="w-full py-2 mt-4 bg-hoverUnderlineColor text-white rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+              Get Consultation
             </button>
           </Link>
         </div>
@@ -128,7 +128,7 @@ const CategoryProduct = () => {
   return (
     <div className="container mx-auto my-8 px-4">
       {/* Categories Button Section */}
-      <div className="flex overflow-x-auto space-x-2 mt-8 justify-between w-full scrollbar-thin scrollbar-thumb-hoverUnderlineColor scrollbar-track-gray-200">
+      <div className="flex overflow-x-auto border border-black rounded-3xl space-x-2 mt-8 justify-between w-full scrollbar-thin scrollbar-thumb-hoverUnderlineColor scrollbar-track-gray-200">
         {isLoading ? renderSkeleton(5) : renderCategories()}
       </div>
 
