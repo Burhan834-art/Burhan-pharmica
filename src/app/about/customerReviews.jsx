@@ -1,5 +1,6 @@
 import React from 'react';
 import { Star } from 'lucide-react';
+import Image from 'next/image';
 
 const CustomerReviews = () => {
   // Array of 5 stars for rating display
@@ -12,7 +13,7 @@ const CustomerReviews = () => {
           {/* Left side - Image Section */}
           <div className="w-full md:w-1/2 relative md:order-1">
             <div className="relative transform transition-transform duration-500 hover:scale-105">
-              <img
+              <Image
                 src="/about/clientReviews.svg"
                 alt="Customer Reviews Illustration"
                 className="w-full h-auto rounded-lg"
@@ -34,7 +35,7 @@ const CustomerReviews = () => {
           </div>
 
           {/* Right side - Content Section */}
-          <div className="w-full md:w-1/2 space-y-6 md:order-2">
+          <div className="w-full md:w-1/2 space-y-4 md:order-2">
             <h2 className="text-3xl sm:text-5xl font-bold tracking-wider" style={{lineHeight: "53px"}}>
               Customer Reviews
             </h2>

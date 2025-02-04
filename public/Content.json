@@ -2,7 +2,7 @@
   "categories": [
     { 
       "name": "All Treatment",
-      "image": "/productIcon/allTretment.png", 
+      "image": "/productIcon/treatment.png", 
       "subcategories": [
         {
           "name": "Erectile DysFunction",

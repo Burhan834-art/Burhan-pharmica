@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 import { motion } from "framer-motion"; // Import motion from Framer Motion
 
 const Heading = () => {
-     // Define the text animation for the bounce effect
+  // Define the text animation for the bounce effect
   const textAnimation = {
     hidden: { opacity: 0, y: 50 },
     visible: (i) => ({
@@ -15,29 +15,31 @@ const Heading = () => {
       },
     }),
   };
+
   return (
     <>
-   <motion.h1
-  className="text-lg container sm:text-2xl md:text-4xl py-[20px] xl:text-6xl font-extrabold text-black tracking-tight drop-shadow-lg shine-effect capitalize flex text-center sm:text-start  sm:max-w-[70%] md:max-w-[60%] xl:max-w-[40%]  leading-tight"
-  initial="hidden"
-  animate="visible"
->
-  {[
-    "Welcome to your trusted UK Online Pharmacy",
-  ].map((line, index) => (
-    <motion.span
-      key={index}
-      className="block text-2xl sm:text-3xl md:text-5xl xl:text-6xl leading-[1.3] "
-      custom={index} // Pass index for staggered animation
-      variants={textAnimation}
-    >
-      {line}
-    </motion.span>
-  ))}
-</motion.h1>
-
+      <motion.h1
+        className="text-lg sm:text-2xl md:text-4xl  xl:text-6xl font-extrabold text-black tracking-tight drop-shadow-lg capitalize leading-tight
+                   text-center sm:text-left  // Center on small screens, left on larger screens
+                   max-w-[90%] sm:max-w-[70%] md:max-w-[70%]" 
+        initial="hidden"
+        animate="visible"
+      >
+        {[
+          "Welcome to your trusted UK Online Pharmacy",
+        ].map((line, index) => (
+          <motion.span
+            key={index}
+            
+            custom={index} // Pass index for staggered animation
+            variants={textAnimation}
+          >
+            {line}
+          </motion.span>
+        ))}
+      </motion.h1>
     </>
-  )
-}
+  );
+};
 
-export default Heading
+export default Heading;

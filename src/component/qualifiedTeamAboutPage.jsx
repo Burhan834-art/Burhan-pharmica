@@ -7,14 +7,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css"; 
-// import " /qualifiedTeam.css";
-import "@/component/content/qualifiedTeam.css"
+import "@/component/content/qualifiedTeam.css" 
 
 const QualifiedTeamAboutPage = () => {
   const [teamData, setTeamData] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [activeIndex, setActiveIndex] = useState(null); // Active member
 
   useEffect(() => {
     fetch("/qualifiedTeamHomePage.json")
@@ -28,36 +26,17 @@ const QualifiedTeamAboutPage = () => {
         setIsLoading(false);
       });
   }, []);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  const handleTouchStart = (index) => {
-    setActiveIndex(index); // Set active member on touch start
-  };
-
-  const handleTouchEnd = () => {
-    setActiveIndex(null); // Reset active member on touch end
-  };
+ 
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="block mx-auto text-center text-4xl sm:text-6xl lg:text-[68px]   leading-tight lg:leading-[91px] font-semibold ">
+      <h1 className="text-center text-4xl sm:text-6xl lg:text-[68px] font-semibold leading-tight">
         A Fully Qualified Team
       </h1>
-      <p className="flex justify-center lg:px-[10rem] xl:px-[20rem] text-center py-8 leading-6 sm:leading-10 text-gray-700">
+      <p className="text-center py-8 text-gray-700 lg:px-[10rem] xl:px-[20rem] sm:px-4">
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s.
       </p>
+
       {isLoading ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {Array(5)
@@ -74,48 +53,55 @@ const QualifiedTeamAboutPage = () => {
         </div>
       ) : isMobile ? (
         <Swiper
-  spaceBetween={20}
-  slidesPerView={1}
-  autoplay={{ delay: 3000, disableOnInteraction: false }}
-  pagination={{ clickable: true, dynamicBullets: true }}
-  modules={[Autoplay]}
-  breakpoints={{
-    640: {
-      slidesPerView: 2,
-    },
-  }}
->
-  {teamData.map((member, index) => (
-    <SwiperSlide key={member.id}>
-      <div className="card w-full  ">
-        <div className="card__content relative  bg-gradient-to-t from-black to-[#ff5c71] text-white rounded-lg shadow-lg overflow-hidden">
-          {/* Image */}
-          <div className="relative w-full h-[300px]">
-            <Image src={member.image} alt={member.name} height={300} width={400} className="object-cover w-full h-full" />
-          </div>
-          {/* Text Div at the Bottom */}
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent text-white p-4 rounded-b-lg">
-            <h2 className="text-lg font-semibold">{member.name}</h2>
-            <p className="text-sm text-gray-200">{`GPhC Number: ${member.gphcNumber}`}</p>
-            <p className="text-xs text-gray-300 mt-2">{member.text}</p>
-            <div className="flex justify-center mt-4">
-              {member.socialLinks.map((link, socialIndex) => (
-                <Link key={socialIndex} href={link.url} target="_blank">
-                  <Image src={link.icon} width={20} height={20} alt={`${link.platform} Icon`} className="mx-2" />
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </SwiperSlide>
-  ))}
-</Swiper>
-
+          spaceBetween={20}
+          slidesPerView={1}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          pagination={{ clickable: true, dynamicBullets: true }}
+          modules={[Autoplay]}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+            },
+          }}
+        >
+          {teamData.map((member) => (
+            <SwiperSlide key={member.id}>
+              <div className="card w-[20rem] flex flex-col items-center bg-white rounded-lg p-4 shadow-lg overflow-hidden">
+                <div className="relative w-full h-[250px] md:h-[400px]">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    height={250} // Make image size responsive
+                    width={400}  // Adjust width to maintain aspect ratio
+                    className="object-cover w-full h-full bg-center" // Ensure image covers full width and height
+                  />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent text-white p-4 rounded-b-lg">
+                  <h2 className="text-sm md:text-lg font-semibold">{member.name}</h2>
+                  <p className="text-xs md:text-sm text-gray-200">{`GPhC Number: ${member.gphcNumber}`}</p>
+                  <p className="text-xs md:text-sm text-gray-300 mt-2">{member.text}</p>
+                  <div className="flex justify-center mt-4">
+                    {member.socialLinks.map((link, socialIndex) => (
+                      <Link key={socialIndex} href={link.url} target="_blank">
+                        <Image
+                          src={link.icon}
+                          width={20}
+                          height={20}
+                          alt={`${link.platform} Icon`}
+                          className="mx-2"
+                        />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-14">
           {teamData.map((member) => (
-            <div key={member.id} className="card w-full relative h-[25rem] ">
+            <div key={member.id} className="card w-full relative h-[25rem]">
               <div className="relative image_box flex flex-col items-center justify-end rounded-xl h-[199.37px] p-2 text-white shadow-lg overflow-hidden transition-all duration-500 ease-in-out group hover:h-[344.83px] bg-gray-100 hover:bg-gradient-to-t hover:from-black hover:to-[#ff5c71]">
                 <Image
                   src={member.image}

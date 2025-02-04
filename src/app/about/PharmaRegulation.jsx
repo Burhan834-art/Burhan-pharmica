@@ -51,7 +51,7 @@ const PharmaRegulation = () => {
                   height={300}
                   width={300}
                 />
-                <h3 className="text-xl font-semibold  my-3" style={{letterSpacing: '1%'}}>{pharmacist.name}</h3>
+                <h3 className="text-xl font-semibold my-3" style={{letterSpacing: '1%'}}>{pharmacist.name}</h3>
                 <p className="text-sm mb-2" style={{lineHeight: '30.91px'}}>{pharmacist.description}</p>
                 <p className="text-hoverUnderlineColor text-sm font-semibold">
                   (GPhC Number: {pharmacist.gphcNumber})
@@ -63,11 +63,11 @@ const PharmaRegulation = () => {
       </div>
 
       {/* Pharmacists Grid for Desktop */}
-      <div className="hidden md:grid md:grid-cols-2 gap-12 mb-16">
+      <div className="hidden md:grid md:grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
         {pharmacists.map((pharmacist, index) => (
           <div 
             key={index}
-            className="flex items-center bg-white rounded-lg p-6 space-x-4 shadow-md"
+            className="flex flex-col lg:flex-row items-center bg-white rounded-lg p-6 space-y-4 lg:space-y-0 lg:space-x-8 shadow-md"
           >
             <div className="flex-shrink-0">
               <Image
@@ -78,7 +78,7 @@ const PharmaRegulation = () => {
                 width={200}
               />
             </div>
-            <div className="flex-grow">
+            <div className="flex-grow text-center lg:text-left">
               <h3 className="text-xl font-semibold mb-2" style={{letterSpacing: '1%'}}>{pharmacist.name}</h3>
               <p className="text-sm mb-2" style={{lineHeight: '30.91px'}}>{pharmacist.description}</p>
               <p className="text-hoverUnderlineColor text-sm font-semibold">
@@ -90,8 +90,8 @@ const PharmaRegulation = () => {
       </div>
 
       {/* Footer Registration Section */}
-      <div className="border rounded-xl shadow-md bg-gradient-to-t from-hoverUnderlineColor to-[#ff7d8c] p-3 sm:p-6 flex flex-col md:flex-row items-center justify-between text-white">
-        <p className="text-center md:text-left mb-4 md:mb-0">
+      <div className="border rounded-xl shadow-md bg-gradient-to-t from-hoverUnderlineColor to-[#ff7d8c] p-3 sm:p-6 text-lg lg:text-xl  flex flex-col md:flex-row items-center justify-between text-white">
+        <p className="text-center md:text-left mb-4 md:mb-0 ">
           For more information or to view registration details visit the
           General Pharmaceutical Council&apos;s website. Responsible Pharmacist:
         </p>
@@ -100,8 +100,8 @@ const PharmaRegulation = () => {
             src="/about/registeredPharma 1.svg"
             alt="Registration Badge"
             className="h-10"
-            height={100}
-            width={100}
+            height={200}
+            width={200}
           />
         </div>
       </div>
