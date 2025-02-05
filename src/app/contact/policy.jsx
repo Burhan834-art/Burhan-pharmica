@@ -47,7 +47,7 @@ const Policy = () => {
     <div className="container mx-auto px-4 my-20">
       {/* Header Section */}
       <div className="text-center mb-10">
-        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold  mb-8">
+        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold  mb-8">
           Our Policies
         </h1>
         <p className="text-base md:text-lg text-black  ">

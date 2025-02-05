@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const CompanyInfo = () => {
   return (
     <section
-      className="relative mx-auto max-w-7xl px-6 py-12 lg:py-16 bg-cover bg-center bg-no-repeat"
+      className="relative mx-auto max-w-6xl px-6 py-12 lg:py-16 bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: "url('/about/reviewBackground.svg')" }} // Change to your actual image path
     > 
 
@@ -23,7 +23,7 @@ const CompanyInfo = () => {
           transition={{ delay: 0.3, duration: 0.6 }}
           className="space-y-6"
         >
-          <h2 className="text-4xl sm:text-6xl font-bold tracking-wider">
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-wider">
             Company Information
           </h2>
           <p className=" leading-relaxed" style={{lineHeight:'40.97px'}} >
@@ -34,7 +34,7 @@ const CompanyInfo = () => {
           </p>
 
           {/* Company Details */}
-          <div className="space-y-2 text-gray-800" style={{lineHeight:'44px'}}>
+          <div className="space-y-2  text-gray-800" style={{lineHeight:'44px'}}>
             <p>
               <span className="font-semibold">Pharmica Ltd</span> is registered in England
               and Wales under company number{" "}

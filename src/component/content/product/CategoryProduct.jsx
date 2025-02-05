@@ -22,12 +22,12 @@ const CategoryList = ({ categories, selectedCategory, onSelectCategory, isLoadin
             <button
               key={index}
               onClick={() => onSelectCategory(category)}
-              className={`flex justify-center items-center m-1 text-sm w-full sm:w-28 md:w-32 lg:w-40 h-8 sm:h-8 md:h-10 lg:h-12 rounded-full transition-all duration-300 ${
+              className={`flex justify-center items-center m-1 text-sm w-full sm:w-32 md:w-32 lg:w-40 h-8 sm:h-8 md:h-10 lg:h-12 rounded-full transition-all duration-300 ${
                 selectedCategory === category ? "bg-hoverUnderlineColor text-white" : "bg-transparent text-gray-800"
               }`}
             >
               <Image src={category.image} alt={category.name || "Unnamed Category"} width={10} height={10} className="w-4 h-4 ml-2 sm:mx-3" priority />
-              <span className=" w-36 sm:w-28 font-semibold text-sm ">{category.name || "Unnamed Category"}</span>
+              <span className=" w-36 sm:w-32 font-semibold text-sm ">{category.name || "Unnamed Category"}</span>
             </button>
           ))}
     </div>

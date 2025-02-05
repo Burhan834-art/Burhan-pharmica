@@ -1,15 +1,15 @@
 "use client"
 import React, { useState, useEffect, useContext } from "react";
 import { CartContext } from "../cart/feature/contextProvider";
-import Skeleton from "react-loading-skeleton"; // Import Skeleton loader
-import "react-loading-skeleton/dist/skeleton.css"; // Import skeleton CSS  
+import Skeleton from "react-loading-skeleton"; 
+import "react-loading-skeleton/dist/skeleton.css"; 
 import Image from "next/image";
 import { ToastContainer } from "react-toastify";
 
 const ProductsCard = () => {
   const [products, setProducts] = useState([]);
   const { cart, dispatch } = useContext(CartContext);
-  const [loading, setLoading] = useState(true); // Add loading state
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,10 +17,10 @@ const ProductsCard = () => {
         const res = await fetch("/ProductContent.json");
         const data = await res.json();
         setProducts(data.Condoms || []);
-        setLoading(false); // Set loading to false once data is fetched
+        setLoading(false); 
       } catch (error) {
         console.error("Error fetching data:", error);
-        setLoading(false); // Set loading to false even on error
+        setLoading(false); 
       }
     };
     fetchData();

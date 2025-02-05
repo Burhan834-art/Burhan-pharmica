@@ -1,44 +1,30 @@
 import React from "react";
-import { motion } from "framer-motion"; // Import motion from Framer Motion
+import { motion } from "framer-motion"; // Import Framer Motion
 
 const Heading = () => {
-  // Define the text animation for the bounce effect
+  // Define text animation for sliding up
   const textAnimation = {
-    hidden: { opacity: 0, y: 50 },
-    visible: (i) => ({
+    hidden: { opacity: 0, y: 100 }, // Start off-screen (below)
+    visible: {
       opacity: 1,
-      y: [50, -20, 0], // Bounce effect
+      y: 0, // Moves to normal position
       transition: {
-        delay: i * 0.1, // Stagger animation for each line
-        duration: 0.6,
-        ease: [0.17, 0.67, 0.83, 0.67], // Smooth bounce easing
+        duration: 0.8,
+        ease: "easeOut", // Smooth transition
       },
-    }),
+    },
   };
 
   return (
-    <>
-      <motion.h1
-        className="text-lg sm:text-2xl md:text-4xl  xl:text-6xl font-extrabold text-black tracking-tight drop-shadow-lg capitalize leading-tight
-                   text-center sm:text-left  // Center on small screens, left on larger screens
-                   max-w-[90%] sm:max-w-[70%] md:max-w-[70%]" 
-        initial="hidden"
-        animate="visible"
-      >
-        {[
-          "Welcome to your trusted UK Online Pharmacy",
-        ].map((line, index) => (
-          <motion.span
-            key={index}
-            
-            custom={index} // Pass index for staggered animation
-            variants={textAnimation}
-          >
-            {line}
-          </motion.span>
-        ))}
-      </motion.h1>
-    </>
+    <motion.h1
+      className="text-lg sm:text-2xl md:text-4xl xl:text-6xl font-extrabold text-black tracking-tight drop-shadow-lg capitalize 
+                 text-center sm:text-left max-w-[90%] sm:max-w-[70%] md:max-w-[60%] leading-6"
+      initial="hidden"
+      animate="visible"
+      variants={textAnimation}
+    >
+      Welcome to your trusted UK Online Pharmacy
+    </motion.h1>
   );
 };
 
